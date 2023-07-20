@@ -1,9 +1,12 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { ReactComponent as Loaction } from "../assets/svgs/location.svg";
+import { ReactComponent as EStar } from "../assets/svgs/empty-star.svg";
+import { ReactComponent as Heart } from "../assets/svgs/heart.svg";
+import ProfileImage from "../assets/images/profile-img.png";
 
 import { topics } from "../data/data";
 
@@ -15,18 +18,41 @@ const Topics = () => {
     {
       field: "topics",
       headerName: "Topics",
+      renderCell: (params) => (
+        <div className="flex items-center h-full w-full justify-center gap-2">
+          <EStar />
+          <Typography className="text-textGray">{params.value}</Typography>
+        </div>
+      ),
+      flex: 3,
     },
     {
       field: "category",
       headerName: "Category",
       headerAlign: "center",
       align: "center",
+      renderCell: () => (
+        <div className="flex items-center h-full w-full justify-center gap-2">
+          <button className="bg-darkOrange px-4 py-2 rounded-md text-white">
+            Category
+          </button>
+        </div>
+      ),
     },
     {
       field: "users",
       headerName: "Users",
       headerAlign: "center",
       align: "center",
+      renderCell: (params) => (
+        <div className="flex items-center h-full w-full justify-center gap-2">
+          <img className="w-6 h-6" src={ProfileImage} alt="Company Logo" />
+          <Typography className="text-textGray text-sm">
+            {params.value}
+          </Typography>
+        </div>
+      ),
+      flex: 1,
     },
     {
       field: "datePosted",
@@ -39,6 +65,12 @@ const Topics = () => {
       headerName: "Reviews",
       headerAlign: "center",
       align: "center",
+      renderCell: (params) => (
+        <div className="flex items-center h-full w-full justify-center gap-1">
+          <Typography>{params.value}</Typography>
+          <Heart />
+        </div>
+      ),
     },
     {
       field: "comments",
@@ -108,7 +140,7 @@ const Topics = () => {
           </button>
         </div>
         <Box
-          width="98%"
+          width="100%"
           height={500}
           m="0 auto"
           sx={{

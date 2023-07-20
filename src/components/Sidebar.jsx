@@ -23,7 +23,7 @@ import { ReactComponent as Logout } from "../assets/svgs/solar_logout-linear.svg
 const Sidebar = () => {
   return (
     <aside className="min-w-[250px] bg-darkOrange min-h-screen">
-      <div className="flex flex-col items-center h-screen justify-between py-3">
+      <div className=" flex flex-col items-center h-screen justify-between py-3">
         <img src={Logo} alt="AlphaWave" />
 
         <ul className="space-y-4">

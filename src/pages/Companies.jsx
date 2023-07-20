@@ -1,11 +1,14 @@
 import { useState } from "react";
 
 import Sidebar from "../components/Sidebar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
 import { ReactComponent as Loaction } from "../assets/svgs/location.svg";
+
 import { companies } from "../data/data";
+import { ReactComponent as Star } from "../assets/svgs/star.svg";
+import GoogleLogo from "../assets/images/google.png";
 
 const Companies = () => {
   const [rows, setRows] = useState(companies);
@@ -15,6 +18,12 @@ const Companies = () => {
     {
       field: "companyName",
       headerName: "Company",
+      renderCell: (params) => (
+        <div className="flex items-center h-full w-full justify-center gap-2">
+          <img className="w-8 h-8" src={GoogleLogo} alt="Company Logo" />
+          <Typography>{params.value}</Typography>
+        </div>
+      ),
     },
     {
       field: "support",
@@ -51,6 +60,21 @@ const Companies = () => {
       headerName: "Ratings",
       headerAlign: "center",
       align: "center",
+      renderCell: (params) => (
+        <div className="flex items-center h-full w-full justify-center gap-2">
+          <Typography>{params.value}</Typography>
+          <Star />
+        </div>
+      ),
+    },
+    {
+      renderCell: () => (
+        <div className="flex items-center h-full w-full justify-center gap-2">
+          <button className="bg-darkOrange px-6 py-2 rounded-md text-white">
+            Support
+          </button>
+        </div>
+      ),
     },
   ];
   return (
@@ -104,7 +128,7 @@ const Companies = () => {
         </h2>
 
         <Box
-          width="98%"
+          width="100%"
           height={500}
           m="0 auto"
           sx={{
