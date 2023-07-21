@@ -24,36 +24,42 @@ const Companies = () => {
           <Typography>{params.value}</Typography>
         </div>
       ),
+      flex: 1,
     },
     {
       field: "support",
       headerName: "Support",
       headerAlign: "center",
       align: "center",
+      flex: 1,
     },
     {
       field: "images",
       headerName: "Images",
       headerAlign: "center",
       align: "center",
+      flex: 1,
     },
     {
       field: "updates",
       headerName: "Updates",
       headerAlign: "center",
       align: "center",
+      flex: 1,
     },
     {
       field: "jobs",
       headerName: "Jobs",
       headerAlign: "center",
       align: "center",
+      flex: 1,
     },
     {
       field: "currentJobs",
       headerName: "Current Jobs",
       headerAlign: "center",
       align: "center",
+      flex: 1,
     },
     {
       field: "ratings",
@@ -66,6 +72,7 @@ const Companies = () => {
           <Star />
         </div>
       ),
+      flex: 1,
     },
     {
       renderCell: () => (
@@ -75,6 +82,7 @@ const Companies = () => {
           </button>
         </div>
       ),
+      flex: 1,
     },
   ];
   return (

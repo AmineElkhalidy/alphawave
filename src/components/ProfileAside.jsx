@@ -38,13 +38,17 @@ const ProfileAside = () => {
           <div className="flex flex-col justify-center items-center gap-3">
             <h2 className="text-textGray text-center">Username</h2>
             <div className="flex items-center gap-6">
-              <Discussion />
+              <button>
+                <Discussion />
+              </button>
               <img
                 className="w-20"
                 src={ProfileImage}
                 alt="User profile image"
               />
-              <Notification />
+              <button>
+                <Notification />
+              </button>
             </div>
             <p className="p-2 bg-textGray rounded-lg text-white text-center">
               Newbie
