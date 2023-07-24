@@ -1,12 +1,17 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import AddEvent from "../components/AddEvent";
 import Sidebar from "../components/Sidebar";
 
 import { ReactComponent as Loaction } from "../assets/svgs/location.svg";
 import { ReactComponent as EventCalendar } from "../assets/svgs/event-calendar.svg";
 import { ReactComponent as EventLocation } from "../assets/svgs/event-location.svg";
 
-import { Link } from "react-router-dom";
-
 const Events = () => {
+  // Drawer State
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
     <div className="w-full flex">
       <Sidebar />
@@ -59,7 +64,10 @@ const Events = () => {
               Events
             </h2>
 
-            <button className="bg-darkOrange text-white font-semibold py-2.5 px-4 rounded-full">
+            <button
+              className="bg-darkOrange text-white font-semibold py-2.5 px-4 rounded-full"
+              onClick={() => setIsDrawerOpen(true)}
+            >
               + New Events
             </button>
           </div>
@@ -160,6 +168,12 @@ const Events = () => {
             ))}
           </div>
         </div>
+
+        <AddEvent
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+          setIsDrawerOpen={setIsDrawerOpen}
+        />
       </div>
     </div>
   );

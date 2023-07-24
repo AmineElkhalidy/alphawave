@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 
 import { Box, Typography } from "@mui/material";
@@ -9,10 +9,14 @@ import { ReactComponent as Heart } from "../assets/svgs/heart.svg";
 import ProfileImage from "../assets/images/profile-img.png";
 
 import { topics } from "../data/data";
+import NewDiscussion from "../components/NewDiscussion";
+import ReplyToComments from "../components/ReplyToComments";
 
 const Topics = () => {
   const [selectionModel, setSelectionModel] = React.useState([]);
   const [rows, setRows] = React.useState(topics);
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [commentsDrawer, setCommentsDrawer] = React.useState(false);
 
   const columns = [
     {
@@ -77,6 +81,14 @@ const Topics = () => {
       headerName: "Comments",
       headerAlign: "center",
       align: "center",
+      renderCell: (params) => (
+        <div
+          onClick={() => setCommentsDrawer(true)}
+          className="flex items-center h-full w-full justify-center gap-1"
+        >
+          <Typography>{params.value}</Typography>
+        </div>
+      ),
     },
     {
       field: "ratings",
@@ -135,7 +147,10 @@ const Topics = () => {
             Discussion
           </h2>
 
-          <button className="bg-darkOrange text-white font-semibold py-2.5 px-4 rounded-full">
+          <button
+            onClick={() => setIsDrawerOpen(true)}
+            className="bg-darkOrange text-white font-semibold py-2.5 px-4 rounded-full"
+          >
             + New discussion
           </button>
         </div>
@@ -169,6 +184,18 @@ const Topics = () => {
             deleteRowsModel={selectionModel}
           />
         </Box>
+
+        <NewDiscussion
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+          setIsDrawerOpen={setIsDrawerOpen}
+        />
+
+        <ReplyToComments
+          open={commentsDrawer}
+          setIsDrawerOpen={setCommentsDrawer}
+          onClose={() => setCommentsDrawer(false)}
+        />
       </div>
     </div>
   );
