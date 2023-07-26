@@ -3,6 +3,8 @@ import React from "react";
 import { Box, Drawer, TextField } from "@mui/material";
 
 import { ReactComponent as Close } from "../assets/svgs/close.svg";
+import { ReactComponent as Send } from "../assets/svgs/send.svg";
+import ProfileImg from "../assets/images/profile-img.png";
 
 const ReplyToComments = ({ open, onClose, setIsDrawerOpen }) => {
   return (
@@ -15,38 +17,36 @@ const ReplyToComments = ({ open, onClose, setIsDrawerOpen }) => {
           </button>
         </Box>
 
-        <Box marginTop="3rem">
-          <form>
-            <div className="space-y-2">
-              <label className="font-medium text-darkBlue">
-                Discussion Title
-              </label>
-              <TextField
-                fullWidth
-                placeholder="Lorem ipsum dolor sit amet consectetur. Nibh amet pellentesque risus amet feugiat consectetur quam mauris quis. "
-              />
+        <Box marginTop="2rem">
+          <form className="bg-gray-200 rounded-md w-full py-3 px-2">
+            <div className="flex flex-col gap-4">
+              {[1, 2, 3, 4, 5].map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <img
+                    className="h-12"
+                    src={ProfileImg}
+                    alt="Profile picture"
+                  />
+                  <div>
+                    <h3 className="font-semibold">
+                      Discussion title{" "}
+                      <span className="font-normal text-textGray text-sm">
+                        2:37 PM
+                      </span>
+                    </h3>
+                    <p className="text-sm">Discussion description</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <Box mt={2}>
-              <div className="space-y-2">
-                <label className="font-medium text-darkBlue block">
-                  Description
-                </label>
-                <TextField
-                  multiline
-                  fullWidth
-                  placeholder="Lorem ipsum dolor sit amet consectetur. Nibh amet pellentesque risus amet feugiat consectetur quam mauris quis."
-                />
-              </div>
-            </Box>
-
-            <div className="mt-8">
-              <button
-                type="submit"
-                className="py-2 px-6 rounded-full bg-darkOrange text-white font-semibold"
-              >
-                Submit
-              </button>
+            <div className="bg-bgGray flex rounded-md p-2 justify-between items-center mt-4">
+              <input
+                type="text"
+                placeholder="Reply"
+                className="bg-transparent text-sm w-full h-full outline-none"
+              />
+              <Send />
             </div>
           </form>
         </Box>
