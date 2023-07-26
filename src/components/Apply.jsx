@@ -62,6 +62,21 @@ const EasyApplyTab = () => {
 
         <div className="">
           <p className="">Be sure to include an upload resume</p>
+          <div className="mb-3">
+            <label
+              htmlFor="resume"
+              className="inline-block test-sm px-8 py-2 rounded-full border border-darkBlue text-darkOrange"
+            >
+              Upload resume
+            </label>
+            <input
+              id="resume"
+              type="file"
+              accept="image/png, image/jpeg"
+              style={{ display: "none", visibility: "none" }}
+            />
+            <p className="text-textGray text-sm">DOC, DOCK, PDF (5 MB)</p>
+          </div>
         </div>
 
         <div className="">
@@ -72,7 +87,9 @@ const EasyApplyTab = () => {
           <p className="text-sm text-textGray mt-2">
             We wil automatically save your answer and resume to pre-fill future
             application and improve your experience on LinkedIn. You can control
-            this in your Application Settings. Learn more
+            this in your{" "}
+            <span className="text-darkOrange">Application Settings</span>.{" "}
+            <a className="text-blue-400 font-medium">Learn more</a>
           </p>
         </div>
 
