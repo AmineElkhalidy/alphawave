@@ -4,6 +4,13 @@ import { ReactComponent as Close } from "../assets/svgs/close.svg";
 import { Tabs, Tab, Box, TextField, Typography, Button } from "@mui/material";
 
 import ProfileImage from "../assets/images/profile-img.png";
+import Education from "./cv/Education";
+import PersonalInfo from "./cv/PersonalInfo";
+import Summary from "./cv/Summary";
+import Skills from "./cv/Skills";
+
+// Steps
+import { Steps, StepsProvider, useSteps } from "react-step-builder";
 
 const EasyApplyTab = () => {
   return (
@@ -104,13 +111,24 @@ const EasyApplyTab = () => {
   );
 };
 
+// Steps builder
+function StepsBuilder() {
+  const { next, prev } = useSteps();
+  return (
+    <Steps>
+      <Education next={next} />
+      <PersonalInfo next={next} />
+      <Summary next={next} />
+      <Skills />
+    </Steps>
+  );
+}
+
 const CreateCVTab = () => {
   return (
-    <Box mt={2}>
-      <TextField label="First Name" fullWidth />
-      <TextField label="Last Name" fullWidth />
-      {/* Add more input fields for creating CV */}
-    </Box>
+    <StepsProvider>
+      <StepsBuilder />
+    </StepsProvider>
   );
 };
 
