@@ -1,6 +1,11 @@
 import React from "react";
 
 import { ReactComponent as Close } from "../assets/svgs/close.svg";
+import { ReactComponent as Email } from "../assets/svgs/email.svg";
+import { ReactComponent as Check } from "../assets/svgs/check.svg";
+import { ReactComponent as Sound } from "../assets/svgs/sound.svg";
+import { ReactComponent as Calendar } from "../assets/svgs/jobsCalendar.svg";
+import { ReactComponent as Files } from "../assets/svgs/jobsFiles.svg";
 import BycycleYellow from "../assets/images/yellow-cycles.png";
 
 const JobApplications = () => {
@@ -82,27 +87,32 @@ const JobApplications = () => {
           </div>
           <div className="flex gap-4">
             <div className="flex flex-col gap-2 items-center justify-center">
+              <Email />
               <div className="bg-darkOrange rounded-md py-3 px-10" />
               <p className="text-xs">Sort</p>
             </div>
 
             <div className="flex flex-col gap-2 items-center justify-center">
+              <Check />
               <div className="bg-darkOrange rounded-md py-3 px-10" />
               <p className="text-xs">Confirmation</p>
             </div>
 
             <div className="flex flex-col gap-2 items-center justify-center">
-              <div className="bg-darkOrange rounded-md py-3 px-10" />
+              <Sound />
+              <div className="bg-[#FFB800] rounded-md py-3 px-10" />
               <p className="text-xs">Action Needed</p>
             </div>
 
             <div className="flex flex-col gap-2 items-center justify-center">
-              <div className="bg-darkOrange rounded-md py-3 px-10" />
+              <Calendar />
+              <div className="bg-[#FFF1ED] rounded-md py-3 px-10" />
               <p className="text-xs">Interview</p>
             </div>
 
             <div className="flex flex-col gap-2 items-center justify-center">
-              <div className="bg-darkOrange rounded-md py-3 px-10" />
+              <Files />
+              <div className="bg-[#FFF1ED] rounded-md py-3 px-10" />
               <p className="text-xs">Offer</p>
             </div>
           </div>

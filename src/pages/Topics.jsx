@@ -12,6 +12,7 @@ import { topics } from "../data/data";
 import NewDiscussion from "../components/NewDiscussion";
 import ReplyToComments from "../components/ReplyToComments";
 import Apply from "../components/Apply";
+import JobApplications from "../components/JobApplications";
 
 const Topics = () => {
   const [selectionModel, setSelectionModel] = React.useState([]);
@@ -200,7 +201,7 @@ const Topics = () => {
     //   </div>
     // </div>
 
-    <Apply />
+    <JobApplications />
   );
 };
 
