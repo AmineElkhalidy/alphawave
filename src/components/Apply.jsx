@@ -121,6 +121,7 @@ const TabPanel = ({ children, value, index }) => {
     </div>
   );
 };
+
 const Apply = () => {
   const [value, setValue] = React.useState(0);
 
@@ -154,9 +155,6 @@ const Apply = () => {
 
         <TabPanel value={value} index={1}>
           <CreateCVTab />
-          <Button variant="contained" color="primary" fullWidth>
-            Create CV
-          </Button>
         </TabPanel>
       </Box>
     </div>

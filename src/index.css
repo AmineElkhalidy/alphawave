@@ -7,3 +7,34 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.css-1aquho2-MuiTabs-indicator {
+  display: none !important;
+}
+
+.css-1l4ezco-MuiButtonBase-root-MuiTab-root {
+  text-transform: capitalize !important;
+}
+
+.css-1l4ezco-MuiButtonBase-root-MuiTab-root {
+  color: #e94e1b !important;
+  font-weight: 600 !important;
+}
+.css-1l4ezco-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: white !important;
+  background-color: #e94e1b !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.css-1ujnqem-MuiTabs-root {
+  border: 1px solid #e94e1b !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding-block: 2px;
+}
