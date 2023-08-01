@@ -34,7 +34,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
@@ -56,7 +56,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/companies"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
@@ -84,7 +84,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/images"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
@@ -112,7 +112,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/updates"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
@@ -140,7 +140,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/events"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
@@ -168,7 +168,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/topics"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
@@ -196,7 +196,7 @@ const Sidebar = () => {
             <li
               className={`${
                 location.pathname === "/jobs"
-                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%]"
+                  ? "bg-white pt-3 pb-2 rounded-s-full w-[200%] pl-4"
                   : undefined
               }`}
             >
