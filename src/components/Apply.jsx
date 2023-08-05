@@ -117,9 +117,9 @@ function StepsBuilder() {
   return (
     <Steps>
       <Education next={next} />
-      <PersonalInfo next={next} />
-      <Summary next={next} />
-      <Skills />
+      <PersonalInfo next={next} prev={prev} />
+      <Summary next={next} prev={prev} />
+      <Skills prev={prev} />
     </Steps>
   );
 }
